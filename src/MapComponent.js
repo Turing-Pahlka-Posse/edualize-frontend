@@ -30,9 +30,10 @@ class MapComponent extends Component {
 
   render() {
     let a
-    if (this.props.statesData.features.properties.density) {
-      a = this.props.statesData.features.properties.density
-    }
+    console.log(this.props);
+    // if (this.props.statesData.features.properties.density) {
+    //   a = this.props.statesData.features.properties.density
+    // }
     return (
       <div className="Map">
         {this.props.edualizeNumbers ? <Map className='map-component' zoomControl={true}

@@ -34,6 +34,8 @@ class App extends Component {
           return response
         })
         .then((response) => {
+          console.log(response);
+
           this.calculateFundingDifferentialByState(response.data)
         })
     }
@@ -46,7 +48,6 @@ class App extends Component {
       this.setState({edualizeNumbers: newArr})
       this.addFundingDifferentialToGeoJson(newArr)
     }
-
 
     addFundingDifferentialToGeoJson(newArr) {
       let statesData = this.state.statesData;
@@ -65,7 +66,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      {!this.state.EdualizeNumbers === [] ? <div>Loading...</div> : <MapComponent statesData={this.state.statesData} edualizeNumbers={this.state.edualizeNumbers}/> }  
+      {!this.state.EdualizeNumbers === [] ? <div>Loading...</div> : <MapComponent statesData={this.state.statesData} edualizeNumbers={this.state.edualizeNumbers}/> }
       </div>
     );
   }
